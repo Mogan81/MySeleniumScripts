@@ -1,0 +1,32 @@
+package keyboardevents;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
+
+public class Draganddrop3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver driver = new FirefoxDriver();
+		
+		driver.manage().window().maximize();
+		driver.get("http://www.univercell.in/pages/Samsung/pgid-713286.aspx?Rfs=priceZZ9414QQ60000pyxqcls_pricezz");
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		
+		WebElement ele = driver.findElement(By.xpath(".//*[@id='pricerange_price']/a[1]"));
+		
+		Actions act = new Actions(driver);
+		Action act1 = act.dragAndDropBy(ele, 50, 0).build();
+				
+		act1.perform();
+		
+
+	}
+
+}
