@@ -1,0 +1,43 @@
+package keyboardevents;
+
+//import java.util.List;
+
+import org.openqa.selenium.By;
+//import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+//import org.openqa.selenium.interactions.Action;
+//import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+
+public class Listbox2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver driver = new FirefoxDriver();
+		
+		driver.manage().window().maximize();
+		driver.get("file:///H:/SeleniumProjects/HTML_Samples/Listbox.html");
+		
+		WebElement ele = driver.findElement(By.name("cars"));
+		
+		/*
+		//Method 2
+		List<WebElement> lstOptions=ele.findElements(By.tagName("option"));    
+		ele.sendKeys(Keys.CONTROL);    
+		lstOptions.get(0).click();//Selects the first option.    
+		lstOptions.get(3).click();//Selects the second option. 
+		*/
+		//Method 3
+		Select sel1 = new Select(ele);
+		sel1.selectByIndex(0);
+		sel1.selectByIndex(2);
+		
+		
+		
+
+
+	}
+
+}
